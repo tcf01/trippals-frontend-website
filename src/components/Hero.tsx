@@ -1,18 +1,16 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { StarIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/outline';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
-import AppScreensCarousel from './AppScreensCarousel';
-import homepageScreenshot from '../assets/homepage.png';
+import multipleCapScreen from '../assets/multiple-cap-screen.png';
 import appStoreButton from '../assets/download on app store.png';
 import googlePlayButton from '../assets/download on google play.png';
 
+
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
-    const [typingSequence, setTypingSequence] = useState<(string | number)[]>([]);
 
-    // Create typing animation sequence with translations
     const createTypingSequence = useCallback(() => {
         const countries = t('hero.typingAnimation.countries', { returnObjects: true }) as string[];
         const prefix = t('hero.typingAnimation.prefix');
@@ -23,34 +21,19 @@ const Hero: React.FC = () => {
         });
 
         return sequence;
-    }, [t]);
+    }, []);
 
-    // Update sequence when language changes
-    useEffect(() => {
-        setTypingSequence(createTypingSequence());
-    }, [i18n.language, createTypingSequence]);
-
-    // Screenshots for the carousel
-    const appScreenshots = [
-        {
-            id: 1,
-            image: homepageScreenshot,
-            title: "",
-            description: "Connect with travelers worldwide and discover amazing trips"
-        },
-        // You can add more screenshots here when you provide them
-    ];
 
     return (
         <section id="home" className="pt-20 bg-gradient-to-br from-primary-50 to-white overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
                     {/* Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="space-y-8"
+                        className="space-y-8 flex flex-col items-center justify-center"
                     >
                         {/* Badge */}
                         <motion.div
@@ -63,23 +46,20 @@ const Hero: React.FC = () => {
                             {t('hero.badge')}
                         </motion.div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight text-center">
                             {t('hero.title')}
                         </h1>
-
-                        {/* Typing Animation */}
-                        <div className="text-2xl md:text-3xl font-mono font-semibold text-primary-600 mt-4 mb-6 min-h-[200px]">
+                        <div className="text-4xl md:text-4xl text-center text-primary-600 mt-4 mb-6 min-h-[100px]">
                             <TypeAnimation
-                                sequence={typingSequence}
+                                sequence={createTypingSequence()}
                                 wrapper="span"
                                 speed={50}
                                 style={{ display: 'inline-block' }}
                                 repeat={Infinity}
                                 cursor={true}
-                                key={i18n.language} // Force re-render when language changes
+                                key={i18n.language}
                             />
                         </div>
-
                         <div className="flex flex-row gap-3 justify-center sm:justify-start">
                             <button className="hover:opacity-80 transition-opacity duration-300">
                                 <img
@@ -96,8 +76,6 @@ const Hero: React.FC = () => {
                                 />
                             </button>
                         </div>
-
-
                     </motion.div>
 
                     {/* App Screenshots Carousel */}
@@ -105,32 +83,17 @@ const Hero: React.FC = () => {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative"
+                        className="relative w-full max-w-4xl mx-auto mt-10"
                     >
-                        <AppScreensCarousel
-                            screenshots={appScreenshots}
-                            autoPlay={true}
-                            autoPlayInterval={5000}
+                        <img
+                            src={multipleCapScreen}
+                            alt="TripPals App Screenshots - Multiple Cap Screen"
+                            className="w-full h-auto object-contain rounded-2xl"
+                            style={{
+                                maxWidth: '100%',
+                                height: 'auto'
+                            }}
                         />
-
-                        {/* Floating Elements */}
-
-                        <motion.div
-                            animate={{ y: [10, -10, 10] }}
-                            transition={{ duration: 4, repeat: Infinity }}
-                            className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-lg p-4 transform rotate-12"
-                        >
-                            <div className="flex items-center space-x-3">
-                                <div className="relative w-12 h-12 bg-gradient-to-br from-secondary-400 to-secondary-500 rounded-lg flex items-center justify-center">
-                                    <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
-                                    {/* Red notification dot */}
-                                    <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white"></div>
-                                </div>
-                                <div>
-                                    <div className="text-sm font-semibold text-gray-900">{t('hero.liveChat')}</div>
-                                </div>
-                            </div>
-                        </motion.div>
                     </motion.div>
                 </div>
             </div>

@@ -61,13 +61,13 @@ const HowItWorks: React.FC = () => {
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-primary-400 to-primary-600 h-full rounded-full hidden md:block"></div>
 
                     {/* Timeline Items */}
-                    <div className="space-y-16">
+                    <div className="space-y-8">
                         {steps.map((step, index) => (
                             <motion.div
                                 key={step.id}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
                                 viewport={{ once: true, margin: "-100px" }}
                                 className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                                     } flex-col`}
@@ -115,7 +115,7 @@ const HowItWorks: React.FC = () => {
                                 key={index}
                                 initial={{ scale: 0 }}
                                 whileInView={{ scale: 1 }}
-                                transition={{ delay: index * 0.1, duration: 0.3 }}
+                                transition={{ delay: index * 0.05, duration: 0.2 }}
                                 viewport={{ once: true }}
                                 className="w-3 h-3 bg-primary-600 rounded-full"
                             />
@@ -127,7 +127,7 @@ const HowItWorks: React.FC = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
                     viewport={{ once: true }}
                     className="text-center mt-16"
                 >
@@ -135,8 +135,11 @@ const HowItWorks: React.FC = () => {
                         <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                             {t('download.howItWorksCTA.title')}
                         </h3>
-                        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+                        <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
                             {t('download.howItWorksCTA.subtitle')}
+                        </p>
+                        <p className="text-primary-600 font-medium mb-6 max-w-2xl mx-auto">
+                            {t('download.howItWorksCTA.tagline')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button className="hover:opacity-80 transition-opacity duration-300">

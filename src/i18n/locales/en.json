@@ -34,11 +34,11 @@
         },
         "groupAdventures": {
             "title": "Global Group Adventures",
-            "description": "Join exciting group trips and adventures around the world, from backpacking in Europe to luxury tours in Asia."
+            "description": "Join exciting group trips and adventures around the world, from backpacking in Europe to different tours in Asia."
         },
         "chat": {
             "title": "Real-time Travel Chat",
-            "description": "Connect with your travel buddies through our secure chat system. Plan trips, share experiences, and build excitement before your journey."
+            "description": "Connect with your travel buddies through the chat room. Plan trips, share experiences, and build excitement before your journey."
         },
         "search": {
             "title": "Advanced Search & Filter",
@@ -114,7 +114,8 @@
         },
         "howItWorksCTA": {
             "title": "Ready to Start Your Journey?",
-            "subtitle": "Join us immediately"
+            "subtitle": "Join us today",
+            "tagline": "Tag us @TripPals and share the app with your friends! 📱✨"
         }
     },
     "footer": {
@@ -125,6 +126,6 @@
             "contact": "Contact Us",
             "support": "Support"
         },
-        "copyright": "© 2024 TripPals. All rights reserved."
+        "copyright": "© 2025 TripPals. All rights reserved."
     }
 }

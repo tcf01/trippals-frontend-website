@@ -11,7 +11,7 @@
         "cta": "立即下載",
         "secondaryCta": "了解更多",
         "typingAnimation": {
-            "prefix": "您的下一個新冒險目的地：",
+            "prefix": "下一個冒險目的地：",
             "countries": [
                 "日本",
                 "泰國",
@@ -34,11 +34,11 @@
         },
         "groupAdventures": {
             "title": "全球團體冒險",
-            "description": "加入世界各地精彩的團體旅行和冒險，從歐洲背包旅行到亞洲豪華旅遊。"
+            "description": "加入世界各地精彩的團體旅行和冒險，從歐洲背包旅行到亞洲不同旅遊。"
         },
         "chat": {
             "title": "實時旅行聊天",
-            "description": "透過我們安全的聊天系統與您的旅行夥伴聯繫。規劃旅程、分享體驗，在旅程前建立期待。"
+            "description": "透過聊天室與您的旅行夥伴聯繫。規劃旅程、分享體驗，在旅程前建立期待。"
         },
         "search": {
             "title": "高級搜索和篩選",
@@ -114,7 +114,8 @@
         },
         "howItWorksCTA": {
             "title": "準備開始您的旅程了嗎？",
-            "subtitle": "立即加入我們"
+            "subtitle": "今天立刻加入我們",
+            "tagline": "標記我們 @TripPals 並與朋友分享這個應用程式！📱✨"
         }
     },
     "footer": {
@@ -125,6 +126,6 @@
             "contact": "聯繫我們",
             "support": "支援"
         },
-        "copyright": "© 2024 TripPals. 版權所有。"
+        "copyright": "© 2025 TripPals. 版權所有。"
     }
 }
