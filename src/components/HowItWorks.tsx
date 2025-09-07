@@ -141,7 +141,7 @@ const HowItWorks: React.FC = () => {
                         <p className="text-primary-600 font-medium mb-6 max-w-2xl mx-auto">
                             {t('download.howItWorksCTA.tagline')}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <div className="flex flex-row gap-4 justify-center">
                             <button className="hover:opacity-80 transition-opacity duration-300">
                                 <img
                                     src={appStoreButton}

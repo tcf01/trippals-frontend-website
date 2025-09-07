@@ -89,18 +89,6 @@ const Navbar: React.FC = () => {
                                     {item.name}
                                 </a>
                             ))}
-
-                            {/* Mobile Actions */}
-                            <div className="flex items-center justify-between px-3 py-2 border-t">
-                                <button className="flex items-center space-x-2 text-gray-700 hover:text-primary-600">
-                                    <HeartIcon className="w-5 h-5" />
-                                    <span>Wishlist</span>
-                                </button>
-                                <button className="flex items-center space-x-2 text-gray-700 hover:text-primary-600">
-                                    <UserIcon className="w-5 h-5" />
-                                    <span>Account</span>
-                                </button>
-                            </div>
                         </div>
                     </div>
                 )}
