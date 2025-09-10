@@ -61,14 +61,28 @@ const Hero: React.FC = () => {
                             />
                         </div>
                         <div className="flex flex-row gap-3 justify-center sm:justify-start">
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            <button
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => {
+                                    if ((window as any).trackAppDownload) {
+                                        (window as any).trackAppDownload('app_store');
+                                    }
+                                }}
+                            >
                                 <img
                                     src={appStoreButton}
                                     alt="Download on the App Store"
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            <button
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => {
+                                    if ((window as any).trackAppDownload) {
+                                        (window as any).trackAppDownload('google_play');
+                                    }
+                                }}
+                            >
                                 <img
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"

@@ -7,6 +7,7 @@ import Features from './components/Features';
 import HowItWorks from './components/HowItWorks';
 import Footer from './components/Footer';
 import { SEOHead } from './components/SEOHead';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { useTranslation } from 'react-i18next';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <SEOHead language={i18n.language} />
+      <GoogleAnalytics measurementId="G-2BP8P2D683" />
       <Navbar />
       <main>
         <Hero />
