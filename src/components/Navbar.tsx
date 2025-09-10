@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Bars3Icon, XMarkIcon, GlobeAltIcon, UserIcon, HeartIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 import appIcon from '../assets/app_icon.png';
 
 const Navbar: React.FC = () => {

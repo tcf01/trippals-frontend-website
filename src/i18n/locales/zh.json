@@ -127,5 +127,14 @@
             "support": "支援"
         },
         "copyright": "© 2025 TripPals. 版權所有。"
+    },
+    "seo": {
+        "title": "TripPals - 尋找旅行夥伴",
+        "description": "與志同道合的旅行者聯繫，加入團體冒險，一起創造難忘的體驗。發現與您興趣相投的旅行夥伴，一起探索世界。",
+        "keywords": "旅行夥伴, 旅遊, 自由行, 背包客, 旅行團, 台灣旅遊, 香港自由行, 澳門旅行, 旅行社群, 團體旅行, 冒險旅行",
+        "ogTitle": "TripPals - 尋找旅行夥伴",
+        "ogDescription": "與志同道合的旅行者聯繫，一起探索世界。",
+        "twitterTitle": "TripPals - 旅行夥伴",
+        "twitterDescription": "尋找旅行夥伴，一起創造精彩冒險。"
     }
 }

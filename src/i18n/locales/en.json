@@ -127,5 +127,14 @@
             "support": "Support"
         },
         "copyright": "© 2025 TripPals. All rights reserved."
+    },
+    "seo": {
+        "title": "TripPals - Find Travel Companions",
+        "description": "Connect with like-minded travelers worldwide. Find travel companions, join group adventures, and create unforgettable experiences together.",
+        "keywords": "travel companions, solo travel, group adventures, backpacking, travel app, adventure travel, travel buddies, solo traveler, group travel, travel community",
+        "ogTitle": "TripPals - Find Travel Companions",
+        "ogDescription": "Connect with like-minded travelers worldwide. Find travel companions and create unforgettable adventures.",
+        "twitterTitle": "TripPals - Travel Together",
+        "twitterDescription": "Find travel companions and create amazing adventures together."
     }
 }

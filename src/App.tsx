@@ -4,14 +4,17 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Features from './components/Features';
-
 import HowItWorks from './components/HowItWorks';
-
 import Footer from './components/Footer';
+import { SEOHead } from './components/SEOHead';
+import { useTranslation } from 'react-i18next';
 
 function App() {
+  const { i18n } = useTranslation();
+
   return (
     <div className="App">
+      <SEOHead language={i18n.language} />
       <Navbar />
       <main>
         <Hero />
