@@ -175,7 +175,7 @@ const TravelTypes: React.FC = () => {
                     className="text-center mt-12"
                 >
                     <p className="text-lg text-gray-600 mb-6">
-                        Can't find your travel style? Create your own custom trip!
+                        Can&apos;t find your travel style? Create your own custom trip!
                     </p>
                     <button className="inline-flex items-center px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-xl transition-colors duration-300">
                         Create Custom Trip

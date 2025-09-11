@@ -9,10 +9,10 @@ declare global {
             command: 'config' | 'event' | 'js' | 'set',
             targetId: string | Date,
             config?: {
-                [key: string]: any;
+                [key: string]: unknown;
             }
         ) => void;
-        dataLayer: any[];
+        dataLayer: unknown[];
     }
 }
 
@@ -68,8 +68,8 @@ export const GoogleAnalytics: React.FC<GoogleAnalyticsProps> = ({ measurementId 
         };
 
         // Make tracking functions globally available
-        (window as any).trackLanguageChange = trackLanguageChange;
-        (window as any).trackAppDownload = trackAppDownload;
+        (window as Window & { trackLanguageChange?: (language: string) => void; trackAppDownload?: (platform: string) => void }).trackLanguageChange = trackLanguageChange;
+        (window as Window & { trackLanguageChange?: (language: string) => void; trackAppDownload?: (platform: string) => void }).trackAppDownload = trackAppDownload;
 
         return () => {
             // Cleanup

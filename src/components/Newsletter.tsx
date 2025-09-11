@@ -118,7 +118,7 @@ const Newsletter: React.FC = () => {
                                     <span className="text-2xl">🎉</span>
                                 </div>
                                 <h3 className="text-white font-semibold text-lg mb-2">Welcome aboard!</h3>
-                                <p className="text-white/90">You've successfully subscribed to our newsletter.</p>
+                                <p className="text-white/90">You&apos;ve successfully subscribed to our newsletter.</p>
                             </motion.div>
                         )}
                     </motion.div>

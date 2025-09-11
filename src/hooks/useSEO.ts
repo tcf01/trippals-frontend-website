@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface SEOData {
@@ -57,7 +57,7 @@ export const useSEO = (language: string) => {
         });
     };
 
-    const getSEOData = (): SEOData => {
+    const getSEOData = useCallback((): SEOData => {
         const isChinese = language === 'zh';
 
         if (isChinese) {
@@ -81,7 +81,7 @@ export const useSEO = (language: string) => {
                 twitterDescription: t('seo.twitterDescription', 'Find travel companions and create amazing adventures together.')
             };
         }
-    };
+    }, [language, t]);
 
     useEffect(() => {
         const seoData = getSEOData();
@@ -110,7 +110,7 @@ export const useSEO = (language: string) => {
         // Update hreflang
         updateHreflang(language);
 
-    }, [language, t]);
+    }, [language, t, getSEOData]);
 
     return {
         updateMetaTag,

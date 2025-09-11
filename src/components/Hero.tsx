@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/outline';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
-// Images are now in public directory
-
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -28,7 +26,6 @@ const Hero: React.FC = () => {
 
         return sequence;
     }, [t]);
-
 
     return (
         <section id="home" className="pt-20 bg-gradient-to-br from-primary-50 to-white overflow-hidden">
@@ -121,4 +118,4 @@ const Hero: React.FC = () => {
     );
 };
 
-export default Hero; 
+export default Hero;

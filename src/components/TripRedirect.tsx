@@ -57,7 +57,7 @@ const TripRedirect: React.FC = () => {
         if (document.body.contains(iframe)) {
           document.body.removeChild(iframe);
         }
-      } catch (e) {
+      } catch {
         // Ignore errors if iframe was already removed
       }
     };
