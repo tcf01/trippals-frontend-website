@@ -87,8 +87,8 @@ run_remote "
     echo '📁 Staying in project directory...'
     cd $PROJECT_DIR
     
-    echo '🔨 Building Next.js project with increased memory...'
-    NODE_OPTIONS='--max-old-space-size=4096' npm run build || { echo '❌ Build failed'; exit 1; }
+    echo '🔨 Building Next.js project with increased memory (without Turbopack)...'
+    NODE_OPTIONS='--max-old-space-size=4096' npm run build:production || { echo '❌ Build failed'; exit 1; }
     
     echo '✅ Step 5 completed - Next.js project built successfully'
 " || { echo '❌ Step 5 failed - stopping deployment'; exit 1; }
