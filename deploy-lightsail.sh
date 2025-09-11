@@ -77,6 +77,10 @@ run_remote "
     echo '📦 Installing npm dependencies with legacy peer deps...'
     npm install --legacy-peer-deps || { echo '❌ npm install failed'; exit 1; }
     
+    echo '📦 Installing platform-specific dependencies...'
+    npm install --include=optional sharp || { echo '❌ sharp install failed'; exit 1; }
+    npm install --os=linux --cpu=x64 sharp || { echo '❌ platform-specific sharp install failed'; exit 1; }
+    
     echo '✅ Step 4 completed'
 " || { echo '❌ Step 4 failed - stopping deployment'; exit 1; }
 
