@@ -2,22 +2,22 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Bars3Icon, XMarkIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+import LanguageSwitcher from './LanguageSwitcher';
 // App icon is now in public directory
 
 const Navbar: React.FC = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleLanguage = () => {
-        const newLang = i18n.language === 'en' ? 'zh' : 'en';
-        i18n.changeLanguage(newLang);
-    };
 
     const navItems = [
-        { name: t('nav.home'), href: '#home' },
-        { name: t('nav.features'), href: '#features' },
-        { name: t('nav.howItWorks'), href: '#how-it-works' },
+        { name: t('nav.home'), href: '/#home' },
+        { name: t('nav.features'), href: '/#features' },
+        { name: t('nav.howItWorks'), href: '/#how-it-works' },
+        { name: t('nav.privacy'), href: '/privacy' },
+        { name: t('nav.contact'), href: '/contact' },
     ];
 
     return (
@@ -39,27 +39,29 @@ const Navbar: React.FC = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-6">
                         {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
-                            >
-                                {item.name}
-                            </a>
+                            item.href.startsWith('/') ? (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                                >
+                                    {item.name}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                                >
+                                    {item.name}
+                                </a>
+                            )
                         ))}
                     </div>
 
                     {/* Desktop Actions */}
                     <div className="hidden md:flex items-center space-x-4">
-
-                        {/* Language Toggle */}
-                        <button
-                            onClick={toggleLanguage}
-                            className="flex items-center space-x-1 text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                        >
-                            <GlobeAltIcon className="w-5 h-5" />
-                            <span>{i18n.language === 'en' ? 'EN' : '中'}</span>
-                        </button>
+                        <LanguageSwitcher />
                     </div>
 
                     {/* Mobile menu button */}
@@ -82,15 +84,29 @@ const Navbar: React.FC = () => {
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
                             {navItems.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {item.name}
-                                </a>
+                                item.href.startsWith('/') ? (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ) : (
+                                    <a
+                                        key={item.name}
+                                        href={item.href}
+                                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        {item.name}
+                                    </a>
+                                )
                             ))}
+                            <div className="px-3 py-2 border-t mt-2">
+                                <LanguageSwitcher />
+                            </div>
                         </div>
                     </div>
                 )}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import I18nProvider from '@/components/I18nProvider';
+import LocaleProvider from '@/components/LocaleProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,6 +12,11 @@ export const metadata: Metadata = {
   keywords: 'travel companions, solo travel, group adventures, backpacking, travel app, 旅行夥伴, 旅遊, 自由行, 背包客, 旅行團',
   authors: [{ name: 'TripPals' }],
   robots: 'index, follow',
+  icons: {
+    icon: '/app_icon.png',
+    shortcut: '/app_icon.png',
+    apple: '/app_icon.png',
+  },
   openGraph: {
     title: 'TripPals - Find Travel Companions | 尋找旅行夥伴',
     description: 'Connect with like-minded travelers worldwide. Find travel companions and create unforgettable adventures.',
@@ -38,8 +44,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://trip-pals.com',
     languages: {
-      'en': 'https://trip-pals.com/?lang=en',
-      'zh-TW': 'https://trip-pals.com/?lang=zh',
+      'en': 'https://trip-pals.com/?locale=en',
+      'zh-HK': 'https://trip-pals.com/?locale=zh-HK',
     },
   },
   other: {
@@ -54,9 +60,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="zh">
+    <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <LocaleProvider>
+            {children}
+          </LocaleProvider>
+        </I18nProvider>
       </body>
     </html>
   );

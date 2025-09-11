@@ -2,7 +2,9 @@
     "nav": {
         "home": "Home",
         "features": "Features",
-        "howItWorks": "How It Works"
+        "howItWorks": "How It Works",
+        "privacy": "Privacy Policy",
+        "contact": "Contact Us"
     },
     "hero": {
         "badge": "Join travelers worldwide",

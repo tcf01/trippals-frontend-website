@@ -2,7 +2,9 @@
     "nav": {
         "home": "首頁",
         "features": "功能",
-        "howItWorks": "運作方式"
+        "howItWorks": "運作方式",
+        "privacy": "隱私條款",
+        "contact": "聯絡我們"
     },
     "hero": {
         "badge": "加入全球旅行者",
