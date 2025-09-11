@@ -118,7 +118,7 @@ EOF
         echo '✅ Created .env.local file'
     fi
     
-    NODE_ENV=production NODE_OPTIONS='--max-old-space-size=2048' npx pm2 start npm --name trippals-frontend -- start
+    NODE_ENV=development NODE_OPTIONS='--max-old-space-size=2048' npx pm2 start npm --name trippals-frontend -- run dev
     
     echo '⏳ Waiting 15 seconds for Next.js app to start...'
     sleep 15
