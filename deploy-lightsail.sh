@@ -61,11 +61,11 @@ run_remote "
     cd $PROJECT_DIR
     
     echo '📥 Pulling latest changes from main branch...'
-    git fetch origin main
-    git reset --hard origin/main
+    git fetch origin main || { echo '❌ Git fetch failed'; exit 1; }
+    git reset --hard origin/main || { echo '❌ Git reset failed'; exit 1; }
     
     echo '✅ Step 3 completed'
-"
+" || { echo '❌ Step 3 failed - stopping deployment'; exit 1; }
 
 echo "📋 Step 4: Installing dependencies..."
 
@@ -75,10 +75,10 @@ run_remote "
     cd $PROJECT_DIR
     
     echo '📦 Installing npm dependencies with legacy peer deps...'
-    npm install --legacy-peer-deps
+    npm install --legacy-peer-deps || { echo '❌ npm install failed'; exit 1; }
     
     echo '✅ Step 4 completed'
-"
+" || { echo '❌ Step 4 failed - stopping deployment'; exit 1; }
 
 echo "📋 Step 5: Building Next.js project..."
 
@@ -88,10 +88,10 @@ run_remote "
     cd $PROJECT_DIR
     
     echo '🔨 Building Next.js project with increased memory...'
-    NODE_OPTIONS='--max-old-space-size=4096' npm run build
+    NODE_OPTIONS='--max-old-space-size=4096' npm run build || { echo '❌ Build failed'; exit 1; }
     
     echo '✅ Step 5 completed - Next.js project built successfully'
-"
+" || { echo '❌ Step 5 failed - stopping deployment'; exit 1; }
 
 echo "📋 Step 6: Installing PM2 and starting service..."
 
@@ -118,7 +118,7 @@ EOF
         echo '✅ Created .env.local file'
     fi
     
-    NODE_ENV=development NODE_OPTIONS='--max-old-space-size=2048' npx pm2 start npm --name trippals-frontend -- run dev
+    NODE_ENV=development NODE_OPTIONS='--max-old-space-size=2048' npx pm2 start npm --name trippals-frontend -- run dev || { echo '❌ PM2 start failed'; exit 1; }
     
     echo '⏳ Waiting 15 seconds for Next.js app to start...'
     sleep 15
@@ -133,10 +133,10 @@ EOF
     fi
     
     echo '💾 Saving PM2 configuration...'
-    npx pm2 save
+    npx pm2 save || { echo '❌ PM2 save failed'; exit 1; }
     
     echo '✅ Step 6 completed'
-"
+" || { echo '❌ Step 6 failed - stopping deployment'; exit 1; }
 
 echo "📋 Final verification..."
 
