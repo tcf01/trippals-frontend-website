@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                         <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight text-center">
                             {t('hero.title')}
                         </h1>
-                        <div className="text-4xl md:text-4xl text-center text-primary-600 mt-4 mb-6 min-h-[100px]">
+                        <div className="text-2xl md:text-4xl text-center text-primary-600 mt-4 mb-6 min-h-[100px]">
                             <TypeAnimation
                                 sequence={createTypingSequence()}
                                 wrapper="span"
