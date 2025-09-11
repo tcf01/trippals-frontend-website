@@ -50,7 +50,7 @@
         },
         "multiLanguage": {
             "title": "Multi-language Support",
-            "description": "Available in English and Traditional Chinese. Connect with travelers from around the world in your preferred language."
+            "description": "Available in English and Traditional Chinese(in beta version). Connect with travelers from around the world in your preferred language."
         }
     },
     "howItWorks": {
