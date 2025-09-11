@@ -1,7 +1,10 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { DevicePhoneMobileIcon, GlobeAltIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 import appIcon from '../assets/app_icon.png';
 import appStoreButton from '../assets/download on app store.png';
 import googlePlayButton from '../assets/download on google play.png';
@@ -58,14 +61,14 @@ const Download: React.FC = () => {
                         {/* Download Buttons */}
                         <div className="flex flex-row gap-3 justify-center sm:justify-start">
                             <button className="hover:opacity-80 transition-opacity duration-300">
-                                <img
+                                <Image
                                     src={appStoreButton}
                                     alt="Download on the App Store"
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
                             <button className="hover:opacity-80 transition-opacity duration-300">
-                                <img
+                                <Image
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"
                                     className="h-12 sm:h-14 w-auto"
@@ -103,7 +106,7 @@ const Download: React.FC = () => {
                                         <div className="flex items-center justify-between mb-6">
                                             <div className="flex items-center space-x-3">
                                                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center p-1">
-                                                    <img
+                                                    <Image
                                                         src={appIcon}
                                                         alt="TripPals"
                                                         className="w-full h-full object-contain rounded-full"

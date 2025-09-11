@@ -4,7 +4,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { UserPlusIcon, MagnifyingGlassIcon, ChatBubbleLeftRightIcon, MapPinIcon } from '@heroicons/react/24/outline';
-// Images are now in public directory
+import Image from 'next/image';
+import appStoreButton from '../assets/download on app store.png';
+import googlePlayButton from '../assets/download on google play.png';
 
 const HowItWorks: React.FC = () => {
     const { t } = useTranslation();
@@ -144,15 +146,15 @@ const HowItWorks: React.FC = () => {
                         </p>
                         <div className="flex flex-row gap-4 justify-center">
                             <button className="hover:opacity-80 transition-opacity duration-300">
-                                <img
-                                    src="/download on app store.png"
+                                <Image
+                                    src={appStoreButton}
                                     alt="Download on the App Store"
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
                             <button className="hover:opacity-80 transition-opacity duration-300">
-                                <img
-                                    src="/download on google play.png"
+                                <Image
+                                    src={googlePlayButton}
                                     alt="Get it on Google Play"
                                     className="h-12 sm:h-14 w-auto"
                                 />

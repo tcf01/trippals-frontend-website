@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { EnvelopeIcon, BellIcon, GiftIcon } from '@heroicons/react/24/outline';
