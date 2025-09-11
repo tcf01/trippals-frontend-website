@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { DevicePhoneMobileIcon, GlobeAltIcon, ShieldCheckIcon, UserGroupIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import appIcon from '../assets/app_icon.png';
-import appStoreButton from '../assets/download on app store.png';
-import googlePlayButton from '../assets/download on google play.png';
+import appStoreButton from '../assets/download_on_app_store.png';
+import googlePlayButton from '../assets/download_on_google_play.png';
 
 const Download: React.FC = () => {
     const { t } = useTranslation();
