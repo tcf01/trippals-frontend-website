@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Deploy TripPals Frontend to Lightsail Script
-# Adapted for React (Create React App) project
+# Adapted for Next.js project
 
 set -e
 
@@ -61,14 +61,15 @@ run_remote "
     cd $PROJECT_DIR
     
     echo '📥 Pulling latest changes from main branch...'
-    git pull origin main
+    git fetch origin main
+    git reset --hard origin/main
     
     echo '✅ Step 3 completed'
 "
 
 echo "📋 Step 4: Installing dependencies..."
 
-# Install dependencies only (no build needed for development server)
+# Install dependencies for Next.js project
 run_remote "
     echo '📁 Changing to project directory...'
     cd $PROJECT_DIR
@@ -79,21 +80,17 @@ run_remote "
     echo '✅ Step 4 completed'
 "
 
-echo "📋 Step 5: Verifying project setup..."
+echo "📋 Step 5: Building Next.js project..."
 
-# Verify project is ready
+# Build Next.js project
 run_remote "
     echo '📁 Staying in project directory...'
     cd $PROJECT_DIR
     
-    echo '🔍 Verifying project setup...'
-    if [ -f 'package.json' ] && [ -d 'src' ]; then
-        echo '✅ Project structure is correct'
-        echo '✅ Step 5 completed - ready for PM2'
-    else
-        echo '❌ Project structure is incorrect'
-        exit 1
-    fi
+    echo '🔨 Building Next.js project with increased memory...'
+    NODE_OPTIONS='--max-old-space-size=4096' npm run build
+    
+    echo '✅ Step 5 completed - Next.js project built successfully'
 "
 
 echo "📋 Step 6: Installing PM2 and starting service..."
@@ -106,7 +103,7 @@ run_remote "
     echo '🏠 Changing to home directory...'
     cd ~
     
-    echo '🚀 Starting PM2 service with development environment...'
+    echo '🚀 Starting PM2 service with Next.js production build...'
     cd $PROJECT_DIR
     
     echo '🔧 Setting up environment variables...'
@@ -114,17 +111,17 @@ run_remote "
     if [ ! -f .env.local ]; then
         echo 'Creating .env.local file...'
         cat > .env.local << 'EOF'
-# Development environment variables
-REACT_APP_SITE_URL=https://trip-pals.com
-GENERATE_SOURCEMAP=true
+# Production environment variables
+NEXT_PUBLIC_SITE_URL=https://trip-pals.com
+NODE_ENV=production
 EOF
         echo '✅ Created .env.local file'
     fi
     
-    NODE_ENV=development npx pm2 start npm --name trippals-frontend -- start
+    NODE_ENV=production NODE_OPTIONS='--max-old-space-size=2048' npx pm2 start npm --name trippals-frontend -- start
     
-    echo '⏳ Waiting 10 seconds for app to start...'
-    sleep 10
+    echo '⏳ Waiting 15 seconds for Next.js app to start...'
+    sleep 15
     
     echo '🔍 Checking if PM2 process is running...'
     if npx pm2 list | grep -q 'trippals-frontend.*online'; then
@@ -154,13 +151,13 @@ run_remote "
     
     echo '=== App Health Check ==='
     if curl -s http://localhost:3000 > /dev/null; then
-        echo '✅ Application is running and accessible'
+        echo '✅ Next.js application is running and accessible'
     else
-        echo '❌ Application is not accessible'
+        echo '❌ Next.js application is not accessible'
     fi
 "
 
-echo "✅ TripPals deployment completed successfully!"
-echo "🌐 Your application should be available at: http://$HOST"
+echo "✅ TripPals Next.js deployment completed successfully!"
+echo "🌐 Your Next.js application should be available at: http://$HOST"
 echo "📊 PM2 status: ssh -i $SSH_KEY $USERNAME@$HOST 'npx pm2 list'"
 echo "📝 PM2 logs: ssh -i $SSH_KEY $USERNAME@$HOST 'npx pm2 logs trippals-frontend'"

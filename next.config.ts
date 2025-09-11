@@ -2,10 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    // Suppress hydration warnings for browser extension attributes
-    suppressHydrationWarning: true,
-  },
+  // Remove experimental config that's causing build issues
 };
 
 export default nextConfig;
