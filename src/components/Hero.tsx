@@ -1,11 +1,11 @@
+"use client";
+
 import React, { useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/outline';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
-import multipleCapScreen from '../assets/multiple-cap-screen.png';
-import appStoreButton from '../assets/download on app store.png';
-import googlePlayButton from '../assets/download on google play.png';
+// Images are now in public directory
 
 
 const Hero: React.FC = () => {
@@ -16,12 +16,18 @@ const Hero: React.FC = () => {
         const prefix = t('hero.typingAnimation.prefix');
         const sequence: (string | number)[] = [];
 
-        countries.forEach(country => {
-            sequence.push(`${prefix} ${country}`, 2000);
-        });
+        // Ensure countries is an array
+        if (Array.isArray(countries)) {
+            countries.forEach(country => {
+                sequence.push(`${prefix} ${country}`, 2000);
+            });
+        } else {
+            // Fallback if translation is not loaded yet
+            sequence.push(`${prefix} 日本`, 2000);
+        }
 
         return sequence;
-    }, []);
+    }, [t]);
 
 
     return (
@@ -70,7 +76,7 @@ const Hero: React.FC = () => {
                                 }}
                             >
                                 <img
-                                    src={appStoreButton}
+                                    src="/download on app store.png"
                                     alt="Download on the App Store"
                                     className="h-12 sm:h-14 w-auto"
                                 />
@@ -84,7 +90,7 @@ const Hero: React.FC = () => {
                                 }}
                             >
                                 <img
-                                    src={googlePlayButton}
+                                    src="/download on google play.png"
                                     alt="Get it on Google Play"
                                     className="h-12 sm:h-14 w-auto"
                                 />
@@ -100,7 +106,7 @@ const Hero: React.FC = () => {
                         className="relative w-full max-w-4xl mx-auto mt-10"
                     >
                         <img
-                            src={multipleCapScreen}
+                            src="/multiple-cap-screen.png"
                             alt="TripPals App Screenshots - Multiple Cap Screen"
                             className="w-full h-auto object-contain rounded-2xl"
                             style={{

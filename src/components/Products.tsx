@@ -102,9 +102,9 @@ const Products: React.FC = () => {
                             {product.badge && (
                                 <div className="absolute top-4 left-4 z-10">
                                     <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${product.badge === 'Best Seller' ? 'bg-primary-500 text-white' :
-                                            product.badge === 'New' ? 'bg-accent-500 text-white' :
-                                                product.badge === 'Limited' ? 'bg-red-500 text-white' :
-                                                    'bg-secondary-500 text-white'
+                                        product.badge === 'New' ? 'bg-accent-500 text-white' :
+                                            product.badge === 'Limited' ? 'bg-red-500 text-white' :
+                                                'bg-secondary-500 text-white'
                                         }`}>
                                         {product.badge}
                                     </span>
@@ -139,8 +139,8 @@ const Products: React.FC = () => {
                                             <StarIcon
                                                 key={i}
                                                 className={`w-4 h-4 ${i < Math.floor(product.rating)
-                                                        ? 'text-yellow-400 fill-current'
-                                                        : 'text-gray-300'
+                                                    ? 'text-yellow-400 fill-current'
+                                                    : 'text-gray-300'
                                                     }`}
                                             />
                                         ))}

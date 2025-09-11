@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bars3Icon, XMarkIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import appIcon from '../assets/app_icon.png';
+// App icon is now in public directory
 
 const Navbar: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -26,7 +28,7 @@ const Navbar: React.FC = () => {
                     <div className="flex items-center">
                         <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-sm">
                             <img
-                                src={appIcon}
+                                src="/app_icon.png"
                                 alt="TripPals"
                                 className="w-full h-full object-contain rounded-lg"
                             />

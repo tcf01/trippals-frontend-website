@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-interface TripRedirectProps { }
 
-const TripRedirect: React.FC<TripRedirectProps> = () => {
+const TripRedirect: React.FC = () => {
   const { roomId } = useParams<{ roomId: string }>();
 
   useEffect(() => {
@@ -112,8 +111,8 @@ const TripRedirect: React.FC<TripRedirectProps> = () => {
           lineHeight: '1.5',
           marginBottom: '20px'
         }}>
-          We're redirecting you to the TripPals app. If the app doesn't open automatically,
-          we'll take you to the app store to download it.
+          We&apos;re redirecting you to the TripPals app. If the app doesn&apos;t open automatically,
+          We&apos;ll take you to the app store to download it.
         </p>
 
         <div style={{

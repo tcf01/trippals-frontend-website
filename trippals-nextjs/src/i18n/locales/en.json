@@ -1,0 +1,140 @@
+{
+    "nav": {
+        "home": "Home",
+        "features": "Features",
+        "howItWorks": "How It Works"
+    },
+    "hero": {
+        "badge": "Join travelers worldwide",
+        "title": "Find Your Perfect Travel Buddy & Create Amazing Adventures",
+        "subtitle": "Connect with like-minded travelers, join group adventures, and create unforgettable experiences together. Discover travel companions who share your interests and explore the world together.",
+        "cta": "Download Now",
+        "secondaryCta": "Learn More",
+        "typingAnimation": {
+            "prefix": "Your next new adventure to",
+            "countries": [
+                "Japan",
+                "Thailand",
+                "Italy",
+                "Greece",
+                "Iceland",
+                "Peru",
+                "New Zealand",
+                "Morocco"
+            ]
+        },
+        "liveChat": "Live Chat"
+    },
+    "features": {
+        "title": "Why Choose TripPals?",
+        "subtitle": "Connect with like-minded travelers, join group adventures, and create unforgettable experiences together. Discover travel companions who share your interests and explore the world together.",
+        "smartMatching": {
+            "title": "Smart Travel Matching",
+            "description": "Find travel buddies who share your interests, travel style, and destination preferences."
+        },
+        "groupAdventures": {
+            "title": "Global Group Adventures",
+            "description": "Join exciting group trips and adventures around the world, from backpacking in Europe to different tours in Asia."
+        },
+        "chat": {
+            "title": "Real-time Travel Chat",
+            "description": "Connect with your travel buddies through the chat room. Plan trips, share experiences, and build excitement before your journey."
+        },
+        "search": {
+            "title": "Advanced Search & Filter",
+            "description": "Search by destination, travel dates, budget, group size, and travel preferences including adventure, culture, food, and more."
+        },
+        "wishlist": {
+            "title": "Travel Wishlist",
+            "description": "Save your favorite trips and destinations to your wishlist. Plan your schedule in advance!"
+        },
+        "multiLanguage": {
+            "title": "Multi-language Support",
+            "description": "Available in English and Traditional Chinese(in beta version). Connect with travelers from around the world in your preferred language."
+        }
+    },
+    "howItWorks": {
+        "title": "How TripPals Works",
+        "subtitle": "Get started with TripPals in 4 simple steps",
+        "step1": {
+            "title": "Create Your Profile",
+            "description": "Set up your travel preferences, interests, and some basic personal information to help other travel buddies know more about you."
+        },
+        "step2": {
+            "title": "Search & Discover",
+            "description": "Browse through trips based on destination, dates, budget, and travel style preferences, or from our suggestions."
+        },
+        "step3": {
+            "title": "Connect & Chat",
+            "description": "A single click to join the chat rooms for related trips, talk with potential travel buddies, and plan your adventure together."
+        },
+        "step4": {
+            "title": "Start Your Adventure",
+            "description": "Coordinate with your new travel buddies to finalize plans, discuss accommodations, and embark on your shared adventure."
+        }
+    },
+    "travelTypes": {
+        "title": "Travel Types We Support",
+        "adventure": "Adventure",
+        "beach": "Beach",
+        "cultural": "Cultural",
+        "cityBreak": "City Break",
+        "foodCulinary": "Food & Culinary",
+        "hiking": "Hiking",
+        "photography": "Photography",
+        "roadTrip": "Road Trip",
+        "backpacking": "Backpacking",
+        "luxury": "Luxury",
+        "wildlife": "Wildlife",
+        "historical": "Historical"
+    },
+    "testimonials": {
+        "title": "What Our Users Say",
+        "subtitle": "Join thousands of travelers who have found their perfect travel companions"
+    },
+    "download": {
+        "title": "Ready to Start Your Journey?",
+        "subtitle": "Join thousands of travelers who have already found their perfect travel companions through TripPals.",
+        "features": {
+            "offline": "Works offline with sync",
+            "secure": "Secure & Private",
+            "community": "Global Community",
+            "verified": "Verified Profiles"
+        },
+        "appStore": "Download on App Store",
+        "playStore": "Get it on Google Play",
+        "phoneMockup": {
+            "title": "TripPals",
+            "subtitle": "Find Travel Buddies",
+            "downloading": "Downloading...",
+            "readyToInstall": "Ready to install",
+            "install": "Install",
+            "safeToInstall": "Safe to install",
+            "rating": "4.9/5 from 10,000+ reviews"
+        },
+        "howItWorksCTA": {
+            "title": "Ready to Start Your Journey?",
+            "subtitle": "Join us today",
+            "tagline": "Tag us @TripPals and share the app with your friends! 📱✨"
+        }
+    },
+    "footer": {
+        "description": "TripPals - Where every trip becomes a story worth sharing",
+        "links": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "contact": "Contact Us",
+            "support": "Support"
+        },
+        "copyright": "© 2025 TripPals. All rights reserved."
+    },
+    "seo": {
+        "title": "TripPals - Find Travel Companions",
+        "description": "Connect with like-minded travelers worldwide. Find travel companions, join group adventures, and create unforgettable experiences together.",
+        "keywords": "travel companions, solo travel, group adventures, backpacking, travel app, adventure travel, travel buddies, solo traveler, group travel, travel community",
+        "ogTitle": "TripPals - Find Travel Companions",
+        "ogDescription": "Connect with like-minded travelers worldwide. Find travel companions and create unforgettable adventures.",
+        "twitterTitle": "TripPals - Travel Together",
+        "twitterDescription": "Find travel companions and create amazing adventures together."
+    }
+}

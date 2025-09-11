@@ -1,0 +1,140 @@
+{
+    "nav": {
+        "home": "首頁",
+        "features": "功能",
+        "howItWorks": "運作方式"
+    },
+    "hero": {
+        "badge": "加入全球旅行者",
+        "title": "尋找您的完美旅行夥伴並創造精彩冒險",
+        "subtitle": "與志同道合的旅行者聯繫，加入團體冒險，一起創造難忘的體驗。發現與您興趣相投的旅行夥伴，一起探索世界。",
+        "cta": "立即下載",
+        "secondaryCta": "了解更多",
+        "typingAnimation": {
+            "prefix": "下一個冒險目的地：",
+            "countries": [
+                "日本",
+                "泰國",
+                "義大利",
+                "希臘",
+                "冰島",
+                "秘魯",
+                "紐西蘭",
+                "摩洛哥"
+            ]
+        },
+        "liveChat": "即時聊天"
+    },
+    "features": {
+        "title": "為什麼選擇 TripPals？",
+        "subtitle": "與志同道合的旅行者聯繫，加入團體冒險，一起創造難忘的體驗。發現與您興趣相投的旅行夥伴，一起探索世界。",
+        "smartMatching": {
+            "title": "智能旅行匹配",
+            "description": "找到與您興趣、旅行風格和目的地偏好相投的旅行夥伴。"
+        },
+        "groupAdventures": {
+            "title": "全球團體冒險",
+            "description": "加入世界各地精彩的團體旅行和冒險，從歐洲背包旅行到亞洲不同旅遊。"
+        },
+        "chat": {
+            "title": "實時旅行聊天",
+            "description": "透過聊天室與您的旅行夥伴聯繫。規劃旅程、分享體驗，在旅程前建立期待。"
+        },
+        "search": {
+            "title": "高級搜索和篩選",
+            "description": "按目的地、旅行日期、預算、團體大小和旅行偏好（包括冒險、文化、美食等）搜索。"
+        },
+        "wishlist": {
+            "title": "旅行願望清單",
+            "description": "將您最喜愛的旅程和目的地保存到願望清單中。提前規劃您的行程！"
+        },
+        "multiLanguage": {
+            "title": "多語言支援",
+            "description": "提供英文和繁體中文（測試版）。以您偏好的語言與來自世界各地的旅行者聯繫。"
+        }
+    },
+    "howItWorks": {
+        "title": "TripPals 運作方式",
+        "subtitle": "只需 4 個簡單步驟即可開始使用 TripPals",
+        "step1": {
+            "title": "建立您的個人檔案",
+            "description": "設定您的旅行偏好、興趣和一些基本個人資訊，幫助其他旅行夥伴更了解您。"
+        },
+        "step2": {
+            "title": "搜索和發現",
+            "description": "根據目的地、日期、預算和旅行風格偏好瀏覽旅程，或從我們的建議中選擇。"
+        },
+        "step3": {
+            "title": "聯繫和聊天",
+            "description": "一鍵加入相關旅程的聊天室，與潛在的旅行夥伴交談，一起規劃您的冒險。"
+        },
+        "step4": {
+            "title": "開始您的冒險",
+            "description": "與您的新旅行夥伴協調以敲定計劃、討論住宿安排，並踏上您們的共同冒險。"
+        }
+    },
+    "travelTypes": {
+        "title": "我們支持的旅行類型",
+        "adventure": "冒險",
+        "beach": "海灘",
+        "cultural": "文化",
+        "cityBreak": "城市遊",
+        "foodCulinary": "美食",
+        "hiking": "行山",
+        "photography": "攝影",
+        "roadTrip": "自駕遊",
+        "backpacking": "背包旅行",
+        "luxury": "豪華",
+        "wildlife": "野生動物",
+        "historical": "歷史"
+    },
+    "testimonials": {
+        "title": "用戶評價",
+        "subtitle": "加入數千名已找到完美旅行夥伴的旅行者"
+    },
+    "download": {
+        "title": "準備開始您的旅程了嗎？",
+        "subtitle": "加入數千名已透過 TripPals 找到完美旅行夥伴的旅行者。",
+        "features": {
+            "offline": "離線工作並同步",
+            "secure": "安全和隱私",
+            "community": "全球社群",
+            "verified": "驗證檔案"
+        },
+        "appStore": "在 App Store 下載",
+        "playStore": "在 Google Play 下載",
+        "phoneMockup": {
+            "title": "TripPals",
+            "subtitle": "尋找旅行夥伴",
+            "downloading": "下載中...",
+            "readyToInstall": "準備安裝",
+            "install": "安裝",
+            "safeToInstall": "安全安裝",
+            "rating": "4.9/5 來自 10,000+ 評價"
+        },
+        "howItWorksCTA": {
+            "title": "準備開始您的旅程了嗎？",
+            "subtitle": "今天立刻加入我們",
+            "tagline": "標記我們 @TripPals 並與朋友分享這個應用程式！📱✨"
+        }
+    },
+    "footer": {
+        "description": "TripPals - 讓每一次旅行都成為值得分享的故事",
+        "links": {
+            "privacy": "隱私政策",
+            "terms": "服務條款",
+            "contact": "聯繫我們",
+            "support": "支援"
+        },
+        "copyright": "© 2025 TripPals. 版權所有。"
+    },
+    "seo": {
+        "title": "TripPals - 尋找旅行夥伴",
+        "description": "與志同道合的旅行者聯繫，加入團體冒險，一起創造難忘的體驗。發現與您興趣相投的旅行夥伴，一起探索世界。",
+        "keywords": "旅行夥伴, 旅遊, 自由行, 背包客, 旅行團, 台灣旅遊, 香港自由行, 澳門旅行, 旅行社群, 團體旅行, 冒險旅行",
+        "ogTitle": "TripPals - 尋找旅行夥伴",
+        "ogDescription": "與志同道合的旅行者聯繫，一起探索世界。",
+        "twitterTitle": "TripPals - 旅行夥伴",
+        "twitterDescription": "尋找旅行夥伴，一起創造精彩冒險。"
+    }
+}
