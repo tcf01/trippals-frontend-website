@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShoppingBagIcon, StarIcon, HeartIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const Products: React.FC = () => {
     const products = [
@@ -118,7 +119,7 @@ const Products: React.FC = () => {
 
                             {/* Product Image */}
                             <div className="relative overflow-hidden">
-                                <img
+                                <Image
                                     src={product.image}
                                     alt={product.name}
                                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"

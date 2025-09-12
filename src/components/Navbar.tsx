@@ -3,19 +3,66 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
 import LanguageSwitcher from './LanguageSwitcher';
-// App icon is now in public directory
+import Link from 'next/link';
+import Image from 'next/image';
+
+// Custom link component that handles locale preservation
+const LocaleAwareLink: React.FC<{ href: string; children: React.ReactNode; className?: string; onClick?: () => void }> = ({ href, children, className, onClick }) => {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault();
+
+        // Get current locale from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLocale = urlParams.get('locale');
+        let currentLocale = 'en';
+
+        if (urlLocale) {
+            currentLocale = urlLocale;
+        } else if (window.location.href.includes('locale=zh-HK')) {
+            currentLocale = 'zh-HK';
+        }
+
+        // Check if it's an anchor link (starts with /#)
+        if (href.startsWith('/#')) {
+            const anchorId = href.substring(2); // Remove /# to get the anchor ID
+
+            // Update URL with locale parameter
+            const localeParam = currentLocale !== 'en' ? `?locale=${currentLocale}` : '';
+            const newUrl = `${window.location.pathname}${href}${localeParam}`;
+            window.history.pushState(null, '', newUrl);
+
+            // Scroll to the section
+            const element = document.getElementById(anchorId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            // For regular page links, navigate normally
+            const localeParam = currentLocale !== 'en' ? `?locale=${currentLocale}` : '';
+            const newHref = href + localeParam;
+            window.location.href = newHref;
+        }
+
+        if (onClick) {
+            onClick();
+        }
+    };
+
+    return (
+        <Link href={href} className={className} onClick={handleClick}>
+            {children}
+        </Link>
+    );
+};
+
 
 const Navbar: React.FC = () => {
     const { t } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
 
-
     const navItems = [
-        { name: t('nav.home'), href: '/#home' },
-        { name: t('nav.features'), href: '/#features' },
-        { name: t('nav.howItWorks'), href: '/#how-it-works' },
+        { name: t('nav.home'), href: '/' },
         { name: t('nav.privacy'), href: '/privacy' },
         { name: t('nav.contact'), href: '/contact' },
     ];
@@ -27,7 +74,7 @@ const Navbar: React.FC = () => {
                     {/* Logo */}
                     <div className="flex items-center">
                         <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center p-1 shadow-sm">
-                            <img
+                            <Image
                                 src="/app_icon.png"
                                 alt="TripPals"
                                 className="w-full h-full object-contain rounded-lg"
@@ -39,23 +86,13 @@ const Navbar: React.FC = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-6">
                         {navItems.map((item) => (
-                            item.href.startsWith('/') ? (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
-                                >
-                                    {item.name}
-                                </Link>
-                            ) : (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
-                                >
-                                    {item.name}
-                                </a>
-                            )
+                            <LocaleAwareLink
+                                key={item.name}
+                                href={item.href}
+                                className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                            >
+                                {item.name}
+                            </LocaleAwareLink>
                         ))}
                     </div>
 
@@ -84,25 +121,14 @@ const Navbar: React.FC = () => {
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
                             {navItems.map((item) => (
-                                item.href.startsWith('/') ? (
-                                    <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        {item.name}
-                                    </Link>
-                                ) : (
-                                    <a
-                                        key={item.name}
-                                        href={item.href}
-                                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
-                                        onClick={() => setIsOpen(false)}
-                                    >
-                                        {item.name}
-                                    </a>
-                                )
+                                <LocaleAwareLink
+                                    key={item.name}
+                                    href={item.href}
+                                    className="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                </LocaleAwareLink>
                             ))}
                             <div className="px-3 py-2 border-t mt-2">
                                 <LanguageSwitcher />

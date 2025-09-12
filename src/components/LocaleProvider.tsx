@@ -9,7 +9,18 @@ function LocaleHandler({ children }: { children: React.ReactNode }) {
     const searchParams = useSearchParams();
 
     useEffect(() => {
-        const locale = searchParams.get('locale');
+        // Check for locale in search params first
+        let locale = searchParams.get('locale');
+
+        // If not found in search params, check hash fragment
+        if (!locale && typeof window !== 'undefined') {
+            const fullUrl = window.location.href;
+            if (fullUrl.includes('locale=zh-HK') || fullUrl.includes('locale=zh')) {
+                locale = 'zh-HK';
+            } else if (fullUrl.includes('locale=en')) {
+                locale = 'en';
+            }
+        }
 
         if (locale === 'zh-HK' || locale === 'zh') {
             i18n.changeLanguage('zh-HK');

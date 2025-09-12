@@ -19,17 +19,15 @@ const resources = {
 // Function to detect locale from query string (including hash fragments)
 export const detectLocale = (): string => {
     if (typeof window !== 'undefined') {
-        // Simple check: look for locale parameter anywhere in the URL
+        // Client-side: check URL for locale parameter
         const fullUrl = window.location.href;
-
         if (fullUrl.includes('locale=zh-HK') || fullUrl.includes('locale=zh')) {
             return 'zh-HK';
         } else if (fullUrl.includes('locale=en')) {
             return 'en';
         }
     }
-
-    // Default to English if no locale specified or empty
+    // Server-side: always return 'en' for SSR safety
     return 'en';
 };
 
