@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -15,21 +16,39 @@ export default function PrivacyPage() {
 
             <main className="pt-20">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="bg-white rounded-lg shadow-lg p-8"
+                    >
+                        <motion.h1
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="text-3xl font-bold text-gray-900 mb-8"
+                        >
                             {isChinese ? '隱私條款' : 'Privacy Policy'}
-                        </h1>
+                        </motion.h1>
 
                         <div className="prose prose-lg max-w-none">
                             {isChinese ? (
                                 <div className="space-y-6">
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                    >
                                         <p className="text-gray-700 leading-relaxed mb-6">
                                             本隱私政策適用於 TripPals（以下簡稱「應用程式」）的移動設備版本（以下簡稱「服務提供商」），該應用程式為免費服務。此服務旨在「按現狀」使用。
                                         </p>
-                                    </section>
+                                    </motion.section>
 
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                    >
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">資訊收集和使用</h2>
                                         <p className="text-gray-700 leading-relaxed mb-4">
                                             當您下載和使用應用程式時，應用程式會收集資訊。此資訊可能包括以下資訊：
@@ -48,7 +67,7 @@ export default function PrivacyPage() {
                                         <p className="text-gray-700 leading-relaxed">
                                             為了獲得更好的體驗，在使用應用程式時，服務提供商可能需要您向我們提供某些個人識別資訊。服務提供商請求的資訊將由他們保留並按照本隱私政策中描述的方式使用。
                                         </p>
-                                    </section>
+                                    </motion.section>
 
                                     <section>
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">第三方存取</h2>
@@ -119,13 +138,21 @@ export default function PrivacyPage() {
                                 </div>
                             ) : (
                                 <div className="space-y-6">
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                    >
                                         <p className="text-gray-700 leading-relaxed mb-6">
                                             This privacy policy applies to the TripPals (hereby referred to as &quot;Application&quot;) for mobile devices (hereby referred to as &quot;Service Provider&quot;) as a Free service. This service is intended for use &quot;AS IS&quot;.
                                         </p>
-                                    </section>
+                                    </motion.section>
 
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                    >
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Information Collection and Use</h2>
                                         <p className="text-gray-700 leading-relaxed mb-4">
                                             The Application collects information when you download and use it. This information may include information such as:
@@ -144,7 +171,7 @@ export default function PrivacyPage() {
                                         <p className="text-gray-700 leading-relaxed">
                                             For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information. The information that the Service Provider request will be retained by them and used as described in this privacy policy.
                                         </p>
-                                    </section>
+                                    </motion.section>
 
                                     <section>
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Third Party Access</h2>
@@ -215,7 +242,7 @@ export default function PrivacyPage() {
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </main>
 

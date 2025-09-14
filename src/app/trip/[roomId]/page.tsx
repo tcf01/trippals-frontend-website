@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 export default function TripRedirect() {
   const params = useParams();
@@ -67,31 +68,46 @@ export default function TripRedirect() {
   }, [roomId]);
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh',
-      backgroundColor: '#f8f9fa',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-    }}>
-      <div style={{
-        textAlign: 'center',
-        padding: '40px 20px',
-        maxWidth: '400px'
-      }}>
-        <div style={{
-          width: '60px',
-          height: '60px',
-          backgroundColor: '#4CAF50',
-          borderRadius: '50%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          margin: '0 auto 20px auto',
-          animation: 'spin 1s linear infinite'
-        }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: '100vh',
+        backgroundColor: '#f8f9fa',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          textAlign: 'center',
+          padding: '40px 20px',
+          maxWidth: '400px'
+        }}
+      >
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{
+            width: '60px',
+            height: '60px',
+            backgroundColor: '#4CAF50',
+            borderRadius: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 auto 20px auto',
+            animation: 'spin 1s linear infinite'
+          }}
+        >
           <div style={{
             width: '30px',
             height: '30px',
@@ -99,34 +115,49 @@ export default function TripRedirect() {
             border: '3px solid white',
             borderTop: '3px solid transparent'
           }}></div>
-        </div>
+        </motion.div>
 
-        <h1 style={{
-          color: '#333',
-          fontSize: '24px',
-          marginBottom: '16px',
-          fontWeight: '600'
-        }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          style={{
+            color: '#333',
+            fontSize: '24px',
+            marginBottom: '16px',
+            fontWeight: '600'
+          }}
+        >
           Opening TripPals...
-        </h1>
+        </motion.h1>
 
-        <p style={{
-          color: '#666',
-          fontSize: '16px',
-          lineHeight: '1.5',
-          marginBottom: '20px'
-        }}>
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          style={{
+            color: '#666',
+            fontSize: '16px',
+            lineHeight: '1.5',
+            marginBottom: '20px'
+          }}
+        >
           We&apos;re redirecting you to the TripPals app. If the app doesn&apos;t open automatically,
           We&apos;ll take you to the app store to download it.
-        </p>
+        </motion.p>
 
-        <div style={{
-          fontSize: '14px',
-          color: '#999'
-        }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          style={{
+            fontSize: '14px',
+            color: '#999'
+          }}
+        >
           Room ID: {roomId}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <style jsx>{`
         @keyframes spin {
@@ -134,7 +165,7 @@ export default function TripRedirect() {
           100% { transform: rotate(360deg); }
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 }
 

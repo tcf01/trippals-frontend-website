@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -23,24 +24,47 @@ export default function ContactPage() {
 
             <main className="pt-20" style={{ height: 'calc(100vh - 187px)' }}>
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="bg-white rounded-lg shadow-lg p-8"
+                    >
+                        <motion.h1
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="text-3xl font-bold text-gray-900 mb-8"
+                        >
                             {isChinese ? '聯絡我們' : 'Contact Us'}
-                        </h1>
+                        </motion.h1>
 
                         <div className="prose prose-lg max-w-none">
                             {isChinese ? (
                                 <div className="space-y-6">
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                    >
                                         <p className="text-gray-700 leading-relaxed mb-6">
                                             我們很樂意聽到您的聲音！如果您有任何問題、建議或需要協助，請隨時與我們聯繫。
                                         </p>
-                                    </section>
+                                    </motion.section>
 
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                    >
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">聯絡方式</h2>
                                         <div className="space-y-4">
-                                            <div className="flex items-center space-x-3">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.6, delay: 0.5 }}
+                                                className="flex items-center space-x-3"
+                                            >
                                                 <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                                                     <EnvelopeIcon className="w-5 h-5 text-primary-600" />
                                                 </div>
@@ -50,9 +74,14 @@ export default function ContactPage() {
                                                         admin@trip-pals.com
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </motion.div>
 
-                                            <div className="flex items-center space-x-3">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.6, delay: 0.6 }}
+                                                className="flex items-center space-x-3"
+                                            >
                                                 <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                                                     <InstagramIcon className="w-5 h-5 text-primary-600" />
                                                 </div>
@@ -62,22 +91,35 @@ export default function ContactPage() {
                                                         @trippals
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </div>
-                                    </section>
+                                    </motion.section>
                                 </div>
                             ) : (
                                 <div className="space-y-6">
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.3 }}
+                                    >
                                         <p className="text-gray-700 leading-relaxed mb-6">
                                             We&apos;d love to hear from you! If you have any questions, suggestions, or need assistance, please don&apos;t hesitate to reach out to us.
                                         </p>
-                                    </section>
+                                    </motion.section>
 
-                                    <section>
+                                    <motion.section
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.4 }}
+                                    >
                                         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Contact Information</h2>
                                         <div className="space-y-4">
-                                            <div className="flex items-center space-x-3">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.6, delay: 0.5 }}
+                                                className="flex items-center space-x-3"
+                                            >
                                                 <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                                                     <EnvelopeIcon className="w-5 h-5 text-primary-600" />
                                                 </div>
@@ -87,9 +129,14 @@ export default function ContactPage() {
                                                         admin@trip-pals.com
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </motion.div>
 
-                                            <div className="flex items-center space-x-3">
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.6, delay: 0.6 }}
+                                                className="flex items-center space-x-3"
+                                            >
                                                 <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                                                     <InstagramIcon className="w-5 h-5 text-primary-600" />
                                                 </div>
@@ -99,13 +146,13 @@ export default function ContactPage() {
                                                         @trippals
                                                     </a>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </div>
-                                    </section>
+                                    </motion.section>
                                 </div>
                             )}
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </main>
 
