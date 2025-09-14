@@ -64,6 +64,8 @@ const Download: React.FC = () => {
                                 <Image
                                     src={appStoreButton}
                                     alt="Download on the App Store"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
@@ -71,6 +73,8 @@ const Download: React.FC = () => {
                                 <Image
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
@@ -109,6 +113,8 @@ const Download: React.FC = () => {
                                                     <Image
                                                         src={appIcon}
                                                         alt="TripPals"
+                                                        width={40}
+                                                        height={40}
                                                         className="w-full h-full object-contain rounded-full"
                                                     />
                                                 </div>

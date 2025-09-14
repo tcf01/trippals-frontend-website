@@ -149,6 +149,8 @@ const HowItWorks: React.FC = () => {
                                 <Image
                                     src={appStoreButton}
                                     alt="Download on the App Store"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>
@@ -156,6 +158,8 @@ const HowItWorks: React.FC = () => {
                                 <Image
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
                             </button>

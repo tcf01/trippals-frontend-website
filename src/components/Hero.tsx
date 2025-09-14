@@ -5,6 +5,10 @@ import { motion } from 'framer-motion';
 import { StarIcon } from '@heroicons/react/24/outline';
 import { TypeAnimation } from 'react-type-animation';
 import { useTranslation } from 'react-i18next';
+import Image from 'next/image';
+import downloadOnAppStore from '@/assets/download_on_app_store.png';
+import downloadOnGooglePlay from '@/assets/download_on_google_play.png';
+import multipleCapScreen from '@/assets/multiple-cap-screen.png';
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -72,10 +76,13 @@ const Hero: React.FC = () => {
                                     }
                                 }}
                             >
-                                <img
-                                    src="/download on app store.png"
+                                <Image
+                                    src={downloadOnAppStore}
                                     alt="Download on the App Store"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
+                                    priority
                                 />
                             </button>
                             <button
@@ -86,10 +93,13 @@ const Hero: React.FC = () => {
                                     }
                                 }}
                             >
-                                <img
-                                    src="/download on google play.png"
+                                <Image
+                                    src={downloadOnGooglePlay}
                                     alt="Get it on Google Play"
+                                    width={120}
+                                    height={56}
                                     className="h-12 sm:h-14 w-auto"
+                                    priority
                                 />
                             </button>
                         </div>
@@ -102,14 +112,17 @@ const Hero: React.FC = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative w-full max-w-4xl mx-auto mt-10"
                     >
-                        <img
-                            src="/multiple-cap-screen.png"
+                        <Image
+                            src={multipleCapScreen}
                             alt="TripPals App Screenshots - Multiple Cap Screen"
+                            width={800}
+                            height={600}
                             className="w-full h-auto object-contain rounded-2xl"
                             style={{
                                 maxWidth: '100%',
                                 height: 'auto'
                             }}
+                            priority
                         />
                     </motion.div>
                 </div>

@@ -77,6 +77,8 @@ const Navbar: React.FC = () => {
                             <Image
                                 src="/app_icon.png"
                                 alt="TripPals"
+                                width={40}
+                                height={40}
                                 className="w-full h-full object-contain rounded-lg"
                             />
                         </div>
