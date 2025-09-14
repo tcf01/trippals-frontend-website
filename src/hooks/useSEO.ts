@@ -104,7 +104,7 @@ export const useSEO = (language: string) => {
         updateMetaTag('', seoData.twitterDescription, 'twitter:description');
 
         // Update canonical URL
-        const canonicalUrl = `https://trip-pals.com${language === 'zh' ? '?lang=zh' : '?lang=en'}`;
+        const canonicalUrl = `https://trip-pals.com${language === 'zh-HK' ? '?locale=zh-HK' : '?locale=en'}`;
         updateCanonical(canonicalUrl);
 
         // Update hreflang
