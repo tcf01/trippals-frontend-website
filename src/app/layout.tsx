@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import I18nProvider from '@/components/I18nProvider';
 import LocaleProvider from '@/components/LocaleProvider';
+import appConfig from '@/config/app';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,8 +39,8 @@ export const metadata: Metadata = {
     title: 'TripPals - Travel Together',
     description: 'Find travel companions and create amazing adventures together.',
     images: ['https://trip-pals.com/app_icon.png'],
-    creator: '@trippals',
-    site: '@trippals',
+    creator: appConfig.seo.creator,
+    site: appConfig.seo.site,
   },
   alternates: {
     canonical: 'https://trip-pals.com',

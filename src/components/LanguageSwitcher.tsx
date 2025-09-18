@@ -16,10 +16,19 @@ function LanguageSwitcherContent() {
         const pathname = window.location.pathname;
         const hash = window.location.hash.split('?')[0]; // Remove any existing query params from hash
 
-        // Create new URL with just the locale parameter
-        const newUrl = `${pathname}${hash}?locale=${newLocale}`;
+        // Create new URL with proper parameter handling
+        const baseUrl = `${pathname}${hash}`;
+        const newUrl = `${baseUrl}?locale=${newLocale}`;
 
-        router.push(newUrl);
+        // Validate URL before navigation
+        try {
+            new URL(newUrl, window.location.origin);
+            router.push(newUrl);
+        } catch (error) {
+            console.error('Invalid URL generated:', newUrl, error);
+            // Fallback to home page with locale
+            router.push(`/?locale=${newLocale}`);
+        }
     };
 
     const currentLocale = i18n.language;

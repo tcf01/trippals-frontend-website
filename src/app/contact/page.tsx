@@ -6,6 +6,7 @@ import { EnvelopeIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import appConfig from '@/config/app';
 
 // Custom Instagram icon that matches Heroicons style
 const InstagramIcon: React.FC<{ className?: string }> = ({ className = "w-5 h-5" }) => (
@@ -70,8 +71,8 @@ export default function ContactPage() {
                                                 </div>
                                                 <div>
                                                     <p className="text-gray-700 font-medium">電子郵件</p>
-                                                    <a href="mailto:admin@trip-pals.com" className="text-primary-600 hover:text-primary-700 transition-colors">
-                                                        admin@trip-pals.com
+                                                    <a href={`mailto:${appConfig.contact.email}`} className="text-primary-600 hover:text-primary-700 transition-colors">
+                                                        {appConfig.contact.email}
                                                     </a>
                                                 </div>
                                             </motion.div>
@@ -87,8 +88,8 @@ export default function ContactPage() {
                                                 </div>
                                                 <div>
                                                     <p className="text-gray-700 font-medium">Instagram</p>
-                                                    <a href="https://instagram.com/trippals" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 transition-colors">
-                                                        @trippals
+                                                    <a href={appConfig.instagram.url} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 transition-colors">
+                                                        {appConfig.instagram.displayName}
                                                     </a>
                                                 </div>
                                             </motion.div>
@@ -125,8 +126,8 @@ export default function ContactPage() {
                                                 </div>
                                                 <div>
                                                     <p className="text-gray-700 font-medium">Email</p>
-                                                    <a href="mailto:admin@trip-pals.com" className="text-primary-600 hover:text-primary-700 transition-colors">
-                                                        admin@trip-pals.com
+                                                    <a href={`mailto:${appConfig.contact.email}`} className="text-primary-600 hover:text-primary-700 transition-colors">
+                                                        {appConfig.contact.email}
                                                     </a>
                                                 </div>
                                             </motion.div>
@@ -142,8 +143,8 @@ export default function ContactPage() {
                                                 </div>
                                                 <div>
                                                     <p className="text-gray-700 font-medium">Instagram</p>
-                                                    <a href="https://instagram.com/trippals" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 transition-colors">
-                                                        @trippals
+                                                    <a href={appConfig.instagram.url} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 transition-colors">
+                                                        {appConfig.instagram.displayName}
                                                     </a>
                                                 </div>
                                             </motion.div>

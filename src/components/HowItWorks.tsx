@@ -7,9 +7,11 @@ import { UserPlusIcon, MagnifyingGlassIcon, ChatBubbleLeftRightIcon, MapPinIcon 
 import Image from 'next/image';
 import appStoreButton from '../assets/download_on_app_store.png';
 import googlePlayButton from '../assets/download_on_google_play.png';
+import appConfig from '@/config/app';
 
 const HowItWorks: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const isChinese = i18n.language === 'zh-HK' || i18n.language === 'zh';
 
     const steps = [
         {
@@ -142,10 +144,42 @@ const HowItWorks: React.FC = () => {
                             {t('download.howItWorksCTA.subtitle')}
                         </p>
                         <p className="text-primary-600 font-medium mb-6 max-w-2xl mx-auto">
-                            {t('download.howItWorksCTA.tagline')}
+                            {isChinese ? (
+                                <>
+                                    在Instagram上標記我們{' '}
+                                    <a
+                                        href={appConfig.instagram.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary-600 hover:text-primary-700 underline transition-colors duration-200"
+                                    >
+                                        {appConfig.instagram.displayName}
+                                    </a>
+                                    {' '}並與朋友分享這個應用程式！📱✨
+                                </>
+                            ) : (
+                                <>
+                                    Tag us on Instagram{' '}
+                                    <a
+                                        href={appConfig.instagram.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary-600 hover:text-primary-700 underline transition-colors duration-200"
+                                    >
+                                        {appConfig.instagram.displayName}
+                                    </a>
+                                    {' '}and share the app with your friends! 📱✨
+                                </>
+                            )}
                         </p>
                         <div className="flex flex-row gap-4 justify-center">
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            <a
+                                href={appConfig.appStore.ios}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => (window as any).trackAppDownload?.('app_store')}
+                            >
                                 <Image
                                     src={appStoreButton}
                                     alt="Download on the App Store"
@@ -153,8 +187,14 @@ const HowItWorks: React.FC = () => {
                                     height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
-                            </button>
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            </a>
+                            <a
+                                href={appConfig.appStore.android}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => (window as any).trackAppDownload?.('google_play')}
+                            >
                                 <Image
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"
@@ -162,7 +202,7 @@ const HowItWorks: React.FC = () => {
                                     height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </motion.div>

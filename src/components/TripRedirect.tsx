@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import appConfig from '@/config/app';
 
 
 const TripRedirect: React.FC = () => {
@@ -36,12 +37,12 @@ const TripRedirect: React.FC = () => {
 
       if (isIOS) {
         // Redirect to App Store
-        const appStoreUrl = 'https://apps.apple.com/app/trippals/id6469631029';
+        const appStoreUrl = appConfig.appStore.ios;
         console.log('📱 Redirecting iOS user to App Store:', appStoreUrl);
         window.location.href = appStoreUrl;
       } else if (isAndroid) {
         // Redirect to Google Play Store
-        const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.trippals.app';
+        const playStoreUrl = appConfig.appStore.android;
         console.log('🤖 Redirecting Android user to Google Play Store:', playStoreUrl);
         window.location.href = playStoreUrl;
       } else {

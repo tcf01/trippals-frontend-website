@@ -1,4 +1,5 @@
 import React from 'react';
+import appConfig from '@/config/app';
 
 interface StructuredDataProps {
     type: 'WebApplication' | 'Organization' | 'WebSite' | 'MobileApplication';
@@ -65,7 +66,7 @@ export const TripPalsStructuredData = {
         foundingDate: '2024',
         sameAs: [
             'https://www.facebook.com/trippals',
-            'https://www.instagram.com/trippals',
+            appConfig.instagram.url,
             'https://twitter.com/trippals'
         ],
         contactPoint: {
@@ -97,8 +98,8 @@ export const TripPalsStructuredData = {
         applicationCategory: 'TravelApplication',
         operatingSystem: 'iOS, Android',
         downloadUrl: [
-            'https://apps.apple.com/app/trippals',
-            'https://play.google.com/store/apps/details?id=com.trippals'
+            appConfig.appStore.ios,
+            appConfig.appStore.android
         ],
         screenshot: 'https://trip-pals.com/app_icon.png',
         softwareVersion: '1.0.0',

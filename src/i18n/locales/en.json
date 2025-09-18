@@ -117,7 +117,7 @@
         "howItWorksCTA": {
             "title": "Ready to Start Your Journey?",
             "subtitle": "Join us today",
-            "tagline": "Tag us @TripPals and share the app with your friends! 📱✨"
+            "tagline": "Tag us on Instagram {{instagramHandle}} and share the app with your friends! 📱✨"
         }
     },
     "footer": {
@@ -138,5 +138,12 @@
         "ogDescription": "Connect with like-minded travelers worldwide. Find travel companions and create unforgettable adventures.",
         "twitterTitle": "TripPals - Travel Together",
         "twitterDescription": "Find travel companions and create amazing adventures together."
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "subtitle": "Sorry, we couldn't find the page you're looking for.",
+        "goHome": "Go Home",
+        "contactText": "If you believe this is an error, please contact us at",
+        "contactEmail": "admin@trip-pals.com"
     }
 }

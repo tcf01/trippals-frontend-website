@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import appConfig from '@/config/app';
 
 export default function TripRedirect() {
   const params = useParams();
@@ -37,12 +38,12 @@ export default function TripRedirect() {
 
       if (isIOS) {
         // Redirect to App Store
-        const appStoreUrl = 'https://apps.apple.com/app/trippals/id6469631029';
+        const appStoreUrl = appConfig.appStore.ios;
         console.log('📱 Redirecting iOS user to App Store:', appStoreUrl);
         window.location.href = appStoreUrl;
       } else if (isAndroid) {
         // Redirect to Google Play Store
-        const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.trippals.app';
+        const playStoreUrl = appConfig.appStore.android;
         console.log('🤖 Redirecting Android user to Google Play Store:', playStoreUrl);
         window.location.href = playStoreUrl;
       } else {

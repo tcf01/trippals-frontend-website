@@ -9,6 +9,7 @@ import Image from 'next/image';
 import downloadOnAppStore from '@/assets/download_on_app_store.png';
 import downloadOnGooglePlay from '@/assets/download_on_google_play.png';
 import multipleCapScreen from '@/assets/multiple-cap-screen.png';
+import appConfig from '@/config/app';
 
 const Hero: React.FC = () => {
     const { t, i18n } = useTranslation();
@@ -68,7 +69,10 @@ const Hero: React.FC = () => {
                             />
                         </div>
                         <div className="flex flex-row gap-3 justify-center sm:justify-start">
-                            <button
+                            <a
+                                href={appConfig.appStore.ios}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:opacity-80 transition-opacity duration-300"
                                 onClick={() => {
                                     if ((window as any).trackAppDownload) {
@@ -84,8 +88,11 @@ const Hero: React.FC = () => {
                                     className="h-12 sm:h-14 w-auto"
                                     priority
                                 />
-                            </button>
-                            <button
+                            </a>
+                            <a
+                                href={appConfig.appStore.android}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:opacity-80 transition-opacity duration-300"
                                 onClick={() => {
                                     if ((window as any).trackAppDownload) {
@@ -101,7 +108,7 @@ const Hero: React.FC = () => {
                                     className="h-12 sm:h-14 w-auto"
                                     priority
                                 />
-                            </button>
+                            </a>
                         </div>
                     </motion.div>
 

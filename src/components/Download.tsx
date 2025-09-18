@@ -8,6 +8,7 @@ import Image from 'next/image';
 import appIcon from '../assets/app_icon.png';
 import appStoreButton from '../assets/download_on_app_store.png';
 import googlePlayButton from '../assets/download_on_google_play.png';
+import appConfig from '@/config/app';
 
 const Download: React.FC = () => {
     const { t } = useTranslation();
@@ -60,7 +61,13 @@ const Download: React.FC = () => {
 
                         {/* Download Buttons */}
                         <div className="flex flex-row gap-3 justify-center sm:justify-start">
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            <a
+                                href={appConfig.appStore.ios}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => (window as any).trackAppDownload?.('app_store')}
+                            >
                                 <Image
                                     src={appStoreButton}
                                     alt="Download on the App Store"
@@ -68,8 +75,14 @@ const Download: React.FC = () => {
                                     height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
-                            </button>
-                            <button className="hover:opacity-80 transition-opacity duration-300">
+                            </a>
+                            <a
+                                href={appConfig.appStore.android}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:opacity-80 transition-opacity duration-300"
+                                onClick={() => (window as any).trackAppDownload?.('google_play')}
+                            >
                                 <Image
                                     src={googlePlayButton}
                                     alt="Get it on Google Play"
@@ -77,7 +90,7 @@ const Download: React.FC = () => {
                                     height={56}
                                     className="h-12 sm:h-14 w-auto"
                                 />
-                            </button>
+                            </a>
                         </div>
 
                         {/* App Rating */}

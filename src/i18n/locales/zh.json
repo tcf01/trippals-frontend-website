@@ -117,7 +117,7 @@
         "howItWorksCTA": {
             "title": "準備開始您的旅程了嗎？",
             "subtitle": "今天立刻加入我們",
-            "tagline": "標記我們 @TripPals 並與朋友分享這個應用程式！📱✨"
+            "tagline": "在Instagram上標記我們 {{instagramHandle}} 並與朋友分享這個應用程式！📱✨"
         }
     },
     "footer": {
@@ -138,5 +138,12 @@
         "ogDescription": "與志同道合的旅行者聯繫，一起探索世界。",
         "twitterTitle": "TripPals - 旅行夥伴",
         "twitterDescription": "尋找旅行夥伴，一起創造精彩冒險。"
+    },
+    "notFound": {
+        "title": "找不到頁面",
+        "subtitle": "抱歉，我們找不到您要尋找的頁面。",
+        "goHome": "返回首頁",
+        "contactText": "如果您認為這是錯誤，請聯繫我們：",
+        "contactEmail": "admin@trip-pals.com"
     }
 }
